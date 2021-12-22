@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Abel&display=swap");
+.inventoryForm {
+  display: flex;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.formImg {
+  width: 45%;
+}
+.formImg img {
+  border-radius: 10px 0px 0px 10px;
+}
+.fullForm {
+  background: #111111;
+  width: 50%;
+  padding-top: 60px;
+  border-radius: 0px 10px 10px 0px;
+}
+.fullForm input,
+select {
+  width: 60%;
+  border: none;
+  color: #beb697;
+  background: none;
+  padding: 15px 3px;
+  font-size: 18px;
+  /* font-family: 'Abel', sans-serif; */
+  border-bottom: 1px solid #beb697;
+}
+.inventoryBtn {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #e79e50;
+  /* font-family: 'Abel', sans-serif; */
+}
+.inventoryBtn:hover {
+  background-color: #e2a05a;
+}

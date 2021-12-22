@@ -1,0 +1,39 @@
+.homeHero {
+  background: url("../../img/bannerbackground.png") no-repeat;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  /* background-position: right; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homeHero h1 {
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.heroSearch .searchInput {
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  width: 20%;
+  padding: 10px 38px;
+  position: relative;
+}
+
+.heroSearch .submit {
+  padding: 10px 37px;
+  border-radius: 30px;
+  border: none;
+  background-color: #f91944;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  position: absolute;
+  margin-left: -100px;
+}

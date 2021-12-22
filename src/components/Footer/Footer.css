@@ -1,0 +1,17 @@
+.footer{
+    background-color: #333333;
+    display: flex;
+    padding: 82px 80px;
+    justify-content: space-between;
+}
+.footer p{
+    color: #ffffff;
+    margin-right: 10px;
+    line-height: 30px;
+}
+.footerLogo img{
+    width: 30%;
+}
+.fMidleContent{
+    margin-right: 165px;
+}
