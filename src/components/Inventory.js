@@ -1,7 +1,6 @@
 import React from "react";
-// import foodsData from '../../foodsData';
-import "./Inventory.css";
-import imgForm from "../../img/form-img.jpg";
+import imgForm from "../img/form-img.jpg";
+import "../styles/components/Inventory.css";
 
 const Inventory = () => {
   // Post data to the server

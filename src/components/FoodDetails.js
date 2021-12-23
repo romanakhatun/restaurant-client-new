@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faShoppingCart,
-  faPlus,
-  faMinus,
-} from "@fortawesome/free-solid-svg-icons";
-import "./FoodDetails.css";
-import { addToDatabaseCart } from "../../database/databaseManager";
+import { FiPlus, FiMinus, FiShoppingCart } from "react-icons/fi";
+import { addToDatabaseCart } from "../database/databaseManager";
+import "../styles/components/FoodDetails.css";
 
 const FoodDetails = () => {
   const { foodKey } = useParams();
@@ -31,7 +26,8 @@ const FoodDetails = () => {
       setCount(count - 1);
     }
   };
-  const rice = food && food.price * count;
+
+  const totalPrice = food && food.price * count;
   let cartCount = count;
 
   // Cart
@@ -58,7 +54,7 @@ const FoodDetails = () => {
   };
 
   return (
-    <div className="singleage">
+    <>
       {food && (
         <div className="foodDetail">
           <div className="fDetailsContent">
@@ -66,15 +62,17 @@ const FoodDetails = () => {
             <p className="foodLongDisc">{food.longDisc}</p>
 
             <div className="priceContainer">
-              <h2 className="rice">${rice}</h2>
+              <h2 className="rice">${totalPrice.toFixed(2)}</h2>
 
               <div className="incDec">
-                <button onClick={DecreaseHandle}>
-                  <FontAwesomeIcon icon={faMinus} />
-                </button>
-                <span>{count}</span>
-                <button onClick={increaseHandle}>
-                  <FontAwesomeIcon className="plusIcon" icon={faPlus} />
+                <button>
+                  <span onClick={DecreaseHandle}>
+                    <FiMinus />
+                  </span>
+                  <span>{count}</span>
+                  <span className="plusIcon" onClick={increaseHandle}>
+                    <FiPlus />
+                  </span>
                 </button>
               </div>
             </div>
@@ -82,7 +80,10 @@ const FoodDetails = () => {
             <br />
             <br />
             <button className="btn btnFull" onClick={() => addFoodToCart(food)}>
-              <FontAwesomeIcon icon={faShoppingCart} /> Add
+              <span>
+                <FiShoppingCart />
+              </span>
+              Add
             </button>
           </div>
 
@@ -91,7 +92,7 @@ const FoodDetails = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

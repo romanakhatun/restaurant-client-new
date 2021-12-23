@@ -1,25 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { AuthContextProvider, PrivateRoute } from './components/SignUpIn/useAuth';
-
-import Header from './components/Header/Header';
-import HomeHero from './components/HomeHero/HomeHero';
-
-import FoodCorner from './components/FoodCorner/FoodCorner';
-import Lunch from './components/Foods/Lunch';
-import Dinner from './components/Foods/Dinner';
-import Breakfast from './components/Foods/Breakfast';
-import FoodDetails from './components/FoodCorner/FoodDetails';
-
-import Cart from './components/Cart/Cart';
-import Login from './components/SignUpIn/Login';
-import Notfound from './components/Notfound/Notfound';
-import CheckoutBtn from './components/FoodCorner/CheckoutBtn';
-import LocationMap from './components/LocationMap/LocationMap';
-import ChooseDelivery from './components/ChooseDelivery/ChooseDelivery';
-import Footer from './components/Footer/Footer';
-import Inventory from './components/Invetory/Inventory';
+import { AuthContextProvider, PrivateRoute } from "./utils/useAuth";
+import Header from "./components/Header";
+import HomeHero from "./components/HomeHero";
+import FoodCorner from "./components/FoodCorner";
+import Lunch from "./components/Lunch";
+import Dinner from "./components/Dinner";
+import Breakfast from "./components/Breakfast";
+import FoodDetails from "./components/FoodDetails";
+import Cart from "./components/Cart";
+import Login from "./components/Login";
+import Notfound from "./components/Notfound";
+import CheckoutBtn from "./components/CheckoutBtn";
+import LocationMap from "./components/LocationMap";
+import ChooseDelivery from "./components/ChooseDelivery";
+import Footer from "./components/Footer";
+import Inventory from "./components/Inventory";
+import "./styles/App.css";
 
 function App() {
   return (
@@ -30,26 +27,26 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <HomeHero></HomeHero>
-              <FoodCorner></FoodCorner>
+              <HomeHero />
+              <FoodCorner />
             </Route>
 
             <Route exact path="/breakfast">
-              <HomeHero></HomeHero>
-              <FoodCorner></FoodCorner>
+              <HomeHero />
+              <FoodCorner />
             </Route>
 
             <Route exact path="/dinner">
-              <HomeHero></HomeHero>
-              <FoodCorner></FoodCorner>
+              <HomeHero />
+              <FoodCorner />
             </Route>
 
             <Route path="/login">
-              <Login></Login>
+              <Login />
             </Route>
 
             <Route path="/cart">
-              <Cart></Cart>
+              <Cart />
             </Route>
 
             <Route path="/inventory">
@@ -57,7 +54,7 @@ function App() {
             </Route>
 
             <PrivateRoute path="/checkout">
-              <LocationMap></LocationMap>
+              <LocationMap />
             </PrivateRoute>
 
             <Route path="/food/:foodKey">
@@ -65,7 +62,7 @@ function App() {
             </Route>
 
             <Route path="*">
-              <Notfound></Notfound>
+              <Notfound />
             </Route>
           </Switch>
 
@@ -79,25 +76,24 @@ function App() {
 
           <Switch>
             <Route exact path="/">
-              <CheckoutBtn></CheckoutBtn>
-              <ChooseDelivery></ChooseDelivery>
+              <CheckoutBtn />
+              <ChooseDelivery />
             </Route>
 
             <Route exact path="/breakfast">
-              <CheckoutBtn></CheckoutBtn>
-              <ChooseDelivery></ChooseDelivery>
+              <CheckoutBtn />
+              <ChooseDelivery />
             </Route>
 
             <Route exact path="/dinner">
-              <CheckoutBtn></CheckoutBtn>
-              <ChooseDelivery></ChooseDelivery>
+              <CheckoutBtn />
+              <ChooseDelivery />
             </Route>
           </Switch>
-
         </Router>
         <Footer />
       </AuthContextProvider>
-    </div >
+    </div>
   );
 }
 

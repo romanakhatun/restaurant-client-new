@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import firebaseConfig from "../../firebase.config";
+import firebaseConfig from "../firebase.config";
 import { useState } from "react";
 import { Route, Redirect } from "react-router-dom";
 

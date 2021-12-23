@@ -24,12 +24,13 @@ img {
   color: #fff;
 }
 
+/* Button Design */
 .btn {
   border: none;
   background-color: transparent;
   padding: 10px 30px;
   font-size: 18px;
-  border-radius: 100px;
+  border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   color: #333;
@@ -41,6 +42,24 @@ img {
 .btnMuted {
   color: #fff;
   background-color: #ddd;
+}
+
+.incDec {
+  border: 1px solid #dddddd;
+  padding: 10px 15px;
+  border-radius: 50px;
+  margin-left: 17px;
+}
+
+.incDec button {
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  display: flex;
+}
+
+.incDec span {
+  padding: 0 5px;
 }
 
 /* Header */

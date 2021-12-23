@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from "react";
-import "./Cart.css";
 import { useForm } from "react-hook-form";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FiMinus, FiPlus } from "react-icons/fi";
+import { FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import {
   getDatabaseCart,
   removeFromDatabaseCart,
   addToDatabaseCart,
   processOrder,
-} from "../../database/databaseManager";
-import { Link } from "react-router-dom";
-import Auth from "../SignUpIn/useAuth";
-
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
+} from "../database/databaseManager";
+import Auth from "../utils/useAuth";
+import CheckoutForm from "./CheckoutForm";
+import "../styles/components/Cart.css";
 
 const Cart = () => {
   const auth = Auth();
   const [cart, setCart] = useState([]);
-  console.log(auth.user);
 
   useEffect(() => {
     const savedCart = getDatabaseCart();
     delete savedCart.undefined;
     const foodKeys = Object.keys(savedCart);
-    // const foodCounts = Object.values(savedCart);
 
     fetch("https://red-onion-restaurant-romana.herokuapp.com/getFoodsByKey", {
       method: "POST",
@@ -57,14 +54,13 @@ const Cart = () => {
     let count = food.quantity + 1;
     addToDatabaseCart(food.key, count);
     window.location.reload();
-    console.log(count);
   };
+
   const decreaseHandle = (food) => {
     let count = food.quantity - 1;
     if (count >= 1) {
       addToDatabaseCart(food.key, count);
       window.location.reload();
-      console.log(count);
     }
   };
 
@@ -228,39 +224,46 @@ const Cart = () => {
         </div>
 
         <div className="cartItems">
-          {cart.map((food) => (
-            <div className="cartItem">
-              <button
-                className="removeIcon"
-                onClick={() => removeProduct(food.key)}
-              >
-                <FontAwesomeIcon icon={faTimes} />
-              </button>
+          {cart.map((food) => {
+            return (
+              <div className="cartItem" key={food.key}>
+                <button
+                  className="removeIcon"
+                  onClick={() => removeProduct(food.key)}
+                >
+                  <FaTimes />
+                </button>
 
-              <div className="img">
-                <img src={food.img} alt="Cart" />
+                <div className="img">
+                  <img src={food.img} alt="Cart" />
+                </div>
+                <div className="details">
+                  <h5>
+                    {food.title}{" "}
+                    <span style={{ fontSize: "14px" }}>(${food.price})</span>
+                  </h5>
+                  <p className="price">
+                    ${(food.price * food.quantity).toFixed(2)}
+                  </p>
+                  <small className="deliveryFee">delivery charge free</small>
+                </div>
+                <div className="incDec">
+                  <button>
+                    <span onClick={() => decreaseHandle(food)}>
+                      <FiMinus />
+                    </span>
+                    <span>{food.quantity}</span>
+                    <span
+                      className="plusIcon"
+                      onClick={() => increaseHandle(food)}
+                    >
+                      <FiPlus />
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div className="details">
-                <h5>
-                  {food.title}{" "}
-                  <span style={{ fontSize: "14px" }}>(${food.price})</span>
-                </h5>
-                <p className="price">
-                  ${(food.price * food.quantity).toFixed(2)}
-                </p>
-                <small className="deliveryFee">delivery charge free</small>
-              </div>
-              <div className="incDec">
-                <button onClick={() => decreaseHandle(food)} className="decBtn">
-                  <FontAwesomeIcon icon={faMinus} />
-                </button>
-                <span> {food.quantity} </span>
-                <button onClick={() => increaseHandle(food)} className="incBtn">
-                  <FontAwesomeIcon className="plusIcon" icon={faPlus} />
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="shoppingCost">
