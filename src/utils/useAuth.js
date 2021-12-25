@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect } from "react";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
+import * as firebase from "firebase/app";
+import "firebase/auth";
 import firebaseConfig from "../firebase.config";
 import { useState } from "react";
 import { Route, Redirect } from "react-router-dom";
@@ -39,9 +39,10 @@ const getUser = (user) => {
 
 const Auth = () => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
-  // Sign in with google
-  const signInWithGoogle = () => {
+  //GOOGLE
+  const SIGN_IN_GOOGLE = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     return firebase
       .auth()
@@ -56,23 +57,26 @@ const Auth = () => {
       });
   };
 
-  // Create account
-  const signUp = (email, password) => {
+  //CREATE ACCOUNT
+  const CREATE_ACCOUNT = (name, email, password) => {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((res) => {
+        res.user.updateProfile({
+          displayName: name,
+        });
         setUser(getUser(res.user));
         return res.user;
       })
       .catch((err) => {
-        setUser(null);
+        setError(err.message);
         return err.message;
       });
   };
 
-  // Sign in
-  const signIn = (email, password) => {
+  //SIGNIN
+  const SIGNIN = (email, password) => {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -81,13 +85,13 @@ const Auth = () => {
         return res.user;
       })
       .catch((err) => {
-        setUser(null);
+        setError(err.message);
         return err.message;
       });
   };
 
-  // Sign out
-  const signOut = () => {
+  // SIGNOUT
+  const SIGNOUT = () => {
     return firebase
       .auth()
       .signOut()
@@ -111,10 +115,11 @@ const Auth = () => {
 
   return {
     user,
-    signInWithGoogle,
-    signUp,
-    signIn,
-    signOut,
+    error,
+    SIGN_IN_GOOGLE,
+    CREATE_ACCOUNT,
+    SIGNIN,
+    SIGNOUT,
   };
 };
 export default Auth;

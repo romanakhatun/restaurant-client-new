@@ -18,13 +18,13 @@ import Footer from "./components/Footer";
 import Inventory from "./components/Inventory";
 import "./styles/App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <AuthContextProvider value="Romana">
-        <Header />
-
         <Router>
+          <Header />
+
           <Switch>
             <Route exact path="/">
               <HomeHero />
@@ -66,13 +66,11 @@ function App() {
             </Route>
           </Switch>
 
-          <div className="foodCorner">
-            <Switch>
-              <Route exact path="/" component={Lunch} />
-              <Route exact path="/breakfast" component={Breakfast} />
-              <Route exact path="/dinner" component={Dinner} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={Lunch} />
+            <Route exact path="/breakfast" component={Breakfast} />
+            <Route exact path="/dinner" component={Dinner} />
+          </Switch>
 
           <Switch>
             <Route exact path="/">
@@ -90,11 +88,11 @@ function App() {
               <ChooseDelivery />
             </Route>
           </Switch>
+          <Footer />
         </Router>
-        <Footer />
       </AuthContextProvider>
     </div>
   );
-}
+};
 
 export default App;

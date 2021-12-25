@@ -55,45 +55,50 @@ const Inventory = () => {
             <option value="dinner">Dinner</option>
           </select>
           <br />
-          <input type="text" class="input" id="key" placeholder="Food key" />
+          <input
+            type="text"
+            className="input"
+            id="key"
+            placeholder="Food key"
+          />
           <br />
           <input
             type="text"
-            class="input"
+            className="input"
             id="title"
             placeholder="Food title"
           />
           <br />
           <input
             type="number"
-            class="input"
+            className="input"
             id="price"
             placeholder="Food price"
           />
           <br />
           <input
             type="text"
-            class="input"
+            className="input"
             id="shortDisc"
             placeholder="Food short description"
           />
           <br />
           <input
             type="text"
-            class="input"
+            className="input"
             id="longDisc"
             placeholder="Food long description"
           />
           <br />
           <input
             type="text"
-            class="input"
+            className="input"
             id="img"
             placeholder="Food img url"
           />
           <br />
           <br />
-          <button class="inventoryBtn" id="addFood" onClick={btnAddFood}>
+          <button className="inventoryBtn" id="addFood" onClick={btnAddFood}>
             Add Food
           </button>
         </div>

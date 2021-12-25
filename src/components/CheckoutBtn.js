@@ -6,8 +6,8 @@ const CheckoutBtn = () => {
   const auth = Auth();
 
   return (
-    <div className="foodCorner">
-      <Link to="/checkout">
+    <div className="CheckOutBtn">
+      <Link to="/cart">
         <button className={auth.user ? "btn btnFull" : "btn btnMuted"}>
           Checkout your food
         </button>

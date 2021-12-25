@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FiPlus, FiMinus, FiShoppingCart } from "react-icons/fi";
-import { addToDatabaseCart } from "../database/databaseManager";
+import { addToDatabaseCart } from "../utils/databaseManager";
 import "../styles/components/FoodDetails.css";
 
 const FoodDetails = () => {

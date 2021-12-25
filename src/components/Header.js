@@ -1,13 +1,15 @@
 import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import logo2 from "../img/logo/logo2.png";
 import Auth from "../utils/useAuth";
+import "../styles/components/Header.css";
 
 const Header = () => {
   const auth = Auth();
 
   const signOutBtn = () => {
-    auth.signOut().then((res) => {
+    auth.SIGNOUT().then((res) => {
       window.location.pathname = "/";
     });
   };
@@ -15,9 +17,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="headerContainer">
-        <a href="/" className="headerLogo">
+        <Link to="/" className="headerLogo">
           <img src={logo2} alt="" />
-        </a>
+        </Link>
 
         <div className="headerNav">
           <a href="/cart">
@@ -25,21 +27,13 @@ const Header = () => {
           </a>
           {auth.user ? (
             <>
-              <span className="userInfo">
-                <h3>{auth.user.name}</h3>
-                <img src={auth.user.photo} alt="User Pic" />
-                <button onClick={signOutBtn} className="btn btnFull">
-                  Sign Out
-                </button>
-              </span>
-              <button className="btn btnFull inventory">
-                <a href="/inventory">Inventory</a>
-              </button>
+              <Link to="/inventory">Inventory</Link>
+              <button onClick={signOutBtn}>signOutBtn</button>
             </>
           ) : (
-            <a href="/login" className="btn btnFull">
+            <Link to="/login" className="btn btnFull">
               Sign Up
-            </a>
+            </Link>
           )}
         </div>
       </div>

@@ -10,7 +10,7 @@ import {
   removeFromDatabaseCart,
   addToDatabaseCart,
   processOrder,
-} from "../database/databaseManager";
+} from "../utils/databaseManager";
 import Auth from "../utils/useAuth";
 import CheckoutForm from "./CheckoutForm";
 import "../styles/components/Cart.css";

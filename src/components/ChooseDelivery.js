@@ -13,9 +13,9 @@ const ChooseDelivery = () => {
     <div className="deliveryContainer">
       <h1>Why you choose us</h1>
       <p>
-        Contrary to popular belief, Lorem Ipsum is not simply random text.{" "}
-        <br /> It has roots in a piece of classical Latin literature from 45 BC,
-        making it over 2000 years old.{" "}
+        Barton waited twenty always repair in within we do.An delighted
+        offending <br /> curiosity my dashwoods at. Boy prosperous increasing
+        surrounded{" "}
       </p>
 
       <div className="deliveryRow">
@@ -29,8 +29,9 @@ const ChooseDelivery = () => {
             <div className="deliveryContent">
               <h3>Fast delivery</h3>
               <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout
+                keep your systems in sync with automated web hook based
+                notifications each time link in paid and how we dream about our
+                future
               </p>
               <a href="/">
                 See more
@@ -49,8 +50,9 @@ const ChooseDelivery = () => {
             <div className="deliveryContent">
               <h3>A Good Auto Responder</h3>
               <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout
+                keep your systems in sync with automated web hook based
+                notifications each time link in paid and how we dream about our
+                future
               </p>
               <a href="/">
                 See more <FaArrowRight />
@@ -67,10 +69,11 @@ const ChooseDelivery = () => {
             </div>
 
             <div className="deliveryContent">
-              <h3>Home Delevery</h3>
+              <h3>Home Delivery</h3>
               <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout
+                keep your systems in sync with automated web hook based
+                notifications each time link in paid and how we dream about our
+                future
               </p>
               <a href="/">
                 See more

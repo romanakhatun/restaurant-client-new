@@ -15,7 +15,7 @@ const Lunch = () => {
   return (
     <div className="foodItems">
       {lunchFoods.map((food) => (
-        <div className="foodItem">
+        <div className="foodItem" key={food.key}>
           <Link to={"/food/" + food.key}>
             <img src={food.img} alt="food" />
           </Link>

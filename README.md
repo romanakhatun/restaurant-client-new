@@ -1,6 +1,6 @@
 # Red Onion Restaurant
 
-#### Red Onion Restaurant create with React, Firebase, Nodejs, Bootstrap4, Heroku, Material-UI, Stripe
+#### Red Onion Restaurant create with React, Firebase, Nodejs, Heroku, Material-UI, Stripe
 
 ### Main Featured:
 

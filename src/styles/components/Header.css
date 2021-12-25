@@ -1,0 +1,25 @@
+/* Header */
+.header {
+  background-color: #fff;
+  padding: 20px 0;
+}
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.headerLogo img {
+  width: 200px;
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+}
+.headerNav > * {
+  margin: 0 10px;
+}

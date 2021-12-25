@@ -1,42 +1,32 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-:root {
-  --colorPrimary: #f91944;
-}
-
 .foodCorner {
-  background-color: #fff;
-  padding: 60px 0;
-  text-align: center;
-}
-
-/* Food Menu */
-.foodMenu {
   max-width: 1140px;
   margin: 0 auto;
+  padding-top: 60px;
+  text-align: center;
 }
-.foodMenu ul {
+.foodCorner ul {
   display: flex;
   align-items: center;
   list-style-type: none;
   justify-content: center;
 }
-.foodMenu ul li {
+.foodCorner ul li {
   padding: 10px 15px;
 }
 
-.foodMenu ul li a {
+.foodCorner ul li a {
   color: #333;
   text-decoration: none;
   font-weight: 600;
   position: relative;
   transition: all 0.3s ease;
 }
-.foodMenu ul li a.active,
-.foodMenu ul li a:hover {
+.foodCorner ul li a.active,
+.foodCorner ul li a:hover {
   color: var(--colorPrimary);
 }
-.foodMenu ul li a.active::before,
-.foodMenu ul li a:hover::before {
+.foodCorner ul li a.active::before,
+.foodCorner ul li a:hover::before {
   content: "";
   width: 80%;
   height: 3px;
@@ -73,7 +63,6 @@
   margin: 15px 0;
   text-decoration: none;
   color: #333;
-  /* font-family: 'Open Sans', sans-serif; */
 }
 .foodItem .foodShortDisc {
   color: #555;

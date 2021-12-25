@@ -35,13 +35,20 @@ img {
   text-decoration: none;
   color: #333;
 }
+
 .btnFull {
   color: #fff;
   background-color: var(--colorPrimary);
 }
+
 .btnMuted {
   color: #fff;
   background-color: #ddd;
+}
+
+.CheckOutBtn {
+  text-align: center;
+  padding-bottom: 60px;
 }
 
 .incDec {
@@ -60,44 +67,6 @@ img {
 
 .incDec span {
   padding: 0 5px;
-}
-
-/* Header */
-.header {
-  background-color: #fff;
-  padding: 20px 0;
-}
-.headerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1140px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.headerLogo img {
-  width: 200px;
-}
-
-.headerNav {
-  display: flex;
-  align-items: center;
-}
-.headerNav > * {
-  margin: 0 10px;
-}
-
-.userInfo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.userInfo img {
-  width: 50px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 10px;
 }
 
 /* From */
