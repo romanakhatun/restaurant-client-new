@@ -8,12 +8,6 @@ import "../styles/components/Header.css";
 const Header = () => {
   const auth = Auth();
 
-  const signOutBtn = () => {
-    auth.SIGNOUT().then((res) => {
-      window.location.pathname = "/";
-    });
-  };
-
   return (
     <header className="header">
       <div className="headerContainer">
@@ -28,7 +22,7 @@ const Header = () => {
           {auth.user ? (
             <>
               <Link to="/inventory">Inventory</Link>
-              <button onClick={signOutBtn}>signOutBtn</button>
+              <Link to="/profile">Profile</Link>
             </>
           ) : (
             <Link to="/login" className="btn btnFull">

@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { AuthContextProvider, PrivateRoute } from "./utils/useAuth";
+import { AuthContextProvider } from "./utils/useAuth";
+import { WithOutAuth } from "./utils/withOutAuth";
+import { WithAuth } from "./utils/withAuth";
 import Header from "./components/Header";
 import HomeHero from "./components/HomeHero";
 import FoodCorner from "./components/FoodCorner";
@@ -16,6 +18,7 @@ import LocationMap from "./components/LocationMap";
 import ChooseDelivery from "./components/ChooseDelivery";
 import Footer from "./components/Footer";
 import Inventory from "./components/Inventory";
+import Profile from "./components/Profile";
 import "./styles/App.css";
 
 const App = () => {
@@ -41,21 +44,25 @@ const App = () => {
               <FoodCorner />
             </Route>
 
-            <Route path="/login">
+            <WithOutAuth path="/login">
               <Login />
-            </Route>
+            </WithOutAuth>
 
             <Route path="/cart">
               <Cart />
             </Route>
 
-            <Route path="/inventory">
+            <WithAuth path="/inventory">
               <Inventory />
-            </Route>
+            </WithAuth>
 
-            <PrivateRoute path="/checkout">
+            <WithAuth path="/checkout">
               <LocationMap />
-            </PrivateRoute>
+            </WithAuth>
+
+            <WithAuth path="/profile">
+              <Profile />
+            </WithAuth>
 
             <Route path="/food/:foodKey">
               <FoodDetails />

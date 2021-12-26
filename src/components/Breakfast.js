@@ -14,22 +14,25 @@ const Breakfast = () => {
   const breakfastFoods = foods.filter((food) => food.cat === "breakfast");
 
   return (
-    <div className="foodItems">
-      {breakfastFoods.map((food) => (
-        <div className="foodItem" key={food.key}>
-          <Link to={"/food/" + food.key}>
-            <img src={food.img} alt="food" />
-          </Link>
-          <h3>
-            <Link to={"/food/" + food.key} className="foodTitle">
-              {food.title}
+    <>
+      {breakfastFoods.length > 0 ? null : <p className="loading">Loading...</p>}
+      <div className="foodItems">
+        {breakfastFoods.map((food) => (
+          <div className="foodItem" key={food.key}>
+            <Link to={"/food/" + food.key}>
+              <img src={food.img} alt="food" />
             </Link>
-          </h3>
-          <p className="foodShortDisc">{food.shortDisc}</p>
-          <h2 className="foodPrice">${food.price}</h2>
-        </div>
-      ))}
-    </div>
+            <h3>
+              <Link to={"/food/" + food.key} className="foodTitle">
+                {food.title}
+              </Link>
+            </h3>
+            <p className="foodShortDisc">{food.shortDisc}</p>
+            <h2 className="foodPrice">${food.price}</h2>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

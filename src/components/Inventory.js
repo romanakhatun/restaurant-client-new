@@ -41,13 +41,13 @@ const Inventory = () => {
         }, 3000);
       });
   };
+
   return (
     <div style={{ textAlign: "center", padding: "50px 0" }}>
-      <div className="inventoryForm" style={{}}>
+      <div className="inventoryForm">
         <div className="formImg">
           <img src={imgForm} alt="" />
         </div>
-
         <div className="fullForm ">
           <select name="cat" id="cat">
             <option value="breakfast">Breakfast</option>

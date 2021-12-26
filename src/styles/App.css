@@ -24,6 +24,13 @@ img {
   color: #fff;
 }
 
+/* Loading */
+
+.loading {
+  text-align: center;
+  margin: 60px 0px;
+}
+
 /* Button Design */
 .btn {
   border: none;

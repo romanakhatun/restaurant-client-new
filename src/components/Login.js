@@ -175,7 +175,7 @@ const Login = () => {
         id="signIn"
         style={{ display: haveAccount ? "block" : "none" }}
       >
-        <form onSubmit={() => signIn(user)}>
+        <form onSubmit={signIn}>
           <input
             className="input"
             type="email"
