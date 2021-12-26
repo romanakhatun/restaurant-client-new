@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Auth from "../utils/useAuth";
-import "../styles/components/Login.css";
+import "../styles/components/SignUp.css";
+import { Link } from "react-router-dom";
 
-const Login = () => {
-  const auth = Auth();
+const SignUp = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -13,6 +12,7 @@ const Login = () => {
     error: "",
     isValid: false,
   });
+  const auth = Auth();
 
   // Input check
   const isValidName = (email) => /^[a-zA-Z ]{2,30}$/.test(email);
@@ -75,30 +75,31 @@ const Login = () => {
   };
 
   const signInGoogle = (event) => {
-    auth.SIGNIN_GOOGLE().then((res) => {
+    auth.SIGN_IN_GOOGLE().then((res) => {
       if (res.email) window.location.pathname = "/cart";
     });
     event.preventDefault();
   };
 
-  // Sign In
-  const signIn = (e) => {
-    auth
-      .SIGNIN(user.email, user.password)
-      .then((res) => {
+  // Create Account
+  const createAccount = (e) => {
+    if (user.isValid) {
+      auth.CREATE_ACCOUNT(user.name, user.email, user.password).then((res) => {
         if (res.email) {
           window.location.pathname = "/cart";
           e.target.reset();
         }
-      })
-      .catch((err) => {
-        console.log(err);
       });
+    } else {
+      const formValid = { ...user };
+      formValid.error = "Form is not valid";
+      setUser(formValid);
+    }
     e.preventDefault();
   };
 
   return (
-    <div className="loginPage">
+    <div className="signUpPage">
       <button onClick={signInGoogle} className="btn btnFull googleSign">
         Google Sign In
       </button>
@@ -106,9 +107,16 @@ const Login = () => {
       <p id="successMessage">{user.success}</p>
       <p id="errorMessage">{auth.error}</p>
       <p id="errorMessage">{user.error}</p>
-
-      <div className="form" id="signIn">
-        <form onSubmit={signIn}>
+      <div className="form" id="signUp">
+        <form onSubmit={createAccount}>
+          <input
+            className="input"
+            type="text"
+            name="name"
+            placeholder="Name"
+            onBlur={inputChange}
+            required
+          />
           <input
             className="input"
             type="email"
@@ -118,6 +126,7 @@ const Login = () => {
             required
           />
           <input
+            id="passValue"
             className="input"
             type="password"
             name="password"
@@ -125,13 +134,23 @@ const Login = () => {
             onBlur={inputChange}
             required
           />
-          <input type="submit" value="Sign In" className="btn btnFull" />
+          <input
+            className="input"
+            id="password"
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            onBlur={inputChange}
+            required
+          />
+          <input type="submit" value="Sign Up" className="btn btnFull" />
         </form>
-        <p className="red formText">
-          Not have an account? <Link to="/register">Sign Up</Link>
+
+        <p className="green formText">
+          Already have an account? <Link to="/login">Sign In</Link>
         </p>
       </div>
     </div>
   );
 };
-export default Login;
+export default SignUp;

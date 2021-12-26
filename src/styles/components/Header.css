@@ -1,14 +1,14 @@
 /* Header */
 .header {
   background-color: #fff;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 .headerContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1140px;
-  padding: 0 15px;
+  padding: 0 25px;
   margin: 0 auto;
 }
 
@@ -20,6 +20,18 @@
   display: flex;
   align-items: center;
 }
-.headerNav > * {
-  margin: 0 10px;
+
+.headerNav a {
+  font-size: 16px;
+  color: #343434;
+  text-decoration: none;
+  padding-left: 25px;
+}
+
+.headerNav .btnSignUp {
+  border-radius: 100px;
+  padding: 6px 21px;
+  color: #fff;
+  background-color: var(--colorPrimary);
+  margin-left: 25px;
 }

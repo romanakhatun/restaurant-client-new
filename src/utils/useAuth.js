@@ -24,7 +24,7 @@ const Auth = () => {
   const [error, setError] = useState(null);
 
   //GOOGLE
-  const SIGN_IN_GOOGLE = () => {
+  const SIGNIN_GOOGLE = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     return firebase
       .auth()
@@ -98,7 +98,7 @@ const Auth = () => {
   return {
     user,
     error,
-    SIGN_IN_GOOGLE,
+    SIGNIN_GOOGLE,
     CREATE_ACCOUNT,
     SIGNIN,
     SIGNOUT,

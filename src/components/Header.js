@@ -16,18 +16,21 @@ const Header = () => {
         </Link>
 
         <div className="headerNav">
-          <a href="/cart">
+          <Link to="/cart">
             <FiShoppingCart />
-          </a>
+          </Link>
           {auth.user ? (
             <>
               <Link to="/inventory">Inventory</Link>
               <Link to="/profile">Profile</Link>
             </>
           ) : (
-            <Link to="/login" className="btn btnFull">
-              Sign Up
-            </Link>
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/register" className="btn btnSignUp">
+                Sign up
+              </Link>
+            </>
           )}
         </div>
       </div>

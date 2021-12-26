@@ -17,6 +17,19 @@
   display: inline-block;
 }
 
+.profilePage .userInfo p.userPic {
+  background-color: #bb350c;
+  width: 150px;
+  height: 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 90px;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+
 .profilePage .userInfo h1 {
   font-size: 2rem;
   font-weight: 400;

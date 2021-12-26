@@ -18,6 +18,7 @@ import "../styles/components/Cart.css";
 const Cart = () => {
   const auth = Auth();
   const [cart, setCart] = useState([]);
+  console.log(auth.user);
 
   useEffect(() => {
     const savedCart = getDatabaseCart();
@@ -115,7 +116,7 @@ const Cart = () => {
           style={{ display: shipInfo ? "none" : "block" }}
         >
           <h2>Shipment Information</h2>
-          {auth.user && (
+          {auth.user ? (
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 name="name"
@@ -185,7 +186,7 @@ const Cart = () => {
               />
               {errors.country && (
                 <span className="error">Country is required</span>
-              )}{" "}
+              )}
               <br />
               <input
                 type="submit"
@@ -193,6 +194,8 @@ const Cart = () => {
                 className="btn btnFull"
               />
             </form>
+          ) : (
+            <p>Loading...</p>
           )}
         </div>
 

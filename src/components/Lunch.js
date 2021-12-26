@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Lunch = () => {
   const [foods, setFoods] = useState([]);
+
   useEffect(() => {
     fetch("https://red-onion-restaurant-romana.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => {
         setFoods(data);
-        console.log(data);
       });
   }, []);
 

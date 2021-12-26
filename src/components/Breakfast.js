@@ -12,7 +12,6 @@ const Breakfast = () => {
   }, []);
 
   const breakfastFoods = foods.filter((food) => food.cat === "breakfast");
-
   return (
     <>
       {breakfastFoods.length > 0 ? null : <p className="loading">Loading...</p>}

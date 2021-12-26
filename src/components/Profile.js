@@ -3,29 +3,36 @@ import "../styles/components/Profile.css";
 
 const Profile = () => {
   const auth = Auth();
+  const user = auth.user;
+  // console.log(user.email);
 
   const signOutBtn = () => {
     auth.SIGNOUT().then((res) => {
-      window.location.pathname = "/";
+      window.location.pathname = "/register";
     });
   };
 
   return (
     <>
       <div className="profilePage">
-        {auth.user ? (
+        {user ? (
           <div className="userInfo">
-            <img src={auth.user.photo} alt="User Pic" />
-            <h1>Welcome, {auth.user.name}</h1>
+            {user.photo ? (
+              <img src={user.photo} alt="User Pic" />
+            ) : (
+              <p className="userPic">{user.email.charAt(0)}</p>
+            )}
+
+            {user.name && <h1>Welcome, {user.name}</h1>}
             <p>
-              Your Email : <strong>{auth.user.email}</strong>
+              Your Email : <strong>{user.email}</strong>
             </p>
             <button className="btn btnFull" onClick={signOutBtn}>
               Sign Out
             </button>
           </div>
         ) : (
-          <p className="loading">Something Went Wrong</p>
+          <p className="loading">Loading....</p>
         )}
       </div>
     </>

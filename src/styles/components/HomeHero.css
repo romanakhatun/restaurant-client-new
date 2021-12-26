@@ -3,11 +3,10 @@
   background-size: cover;
   height: 80vh;
   width: 100%;
-  /* background-position: right; */
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .homeHero h1 {

@@ -10,8 +10,8 @@ const Breakfast = () => {
         setFoods(data);
       });
   }, []);
-  const dinnerFoods = foods.filter((food) => food.cat === "dinner");
 
+  const dinnerFoods = foods.filter((food) => food.cat === "dinner");
   return (
     <>
       {dinnerFoods.length > 0 ? null : <p className="loading">Loading...</p>}

@@ -20,6 +20,7 @@ import Footer from "./components/Footer";
 import Inventory from "./components/Inventory";
 import Profile from "./components/Profile";
 import "./styles/App.css";
+import SignUp from "./components/SignUp";
 
 const App = () => {
   return (
@@ -48,9 +49,13 @@ const App = () => {
               <Login />
             </WithOutAuth>
 
-            <Route path="/cart">
+            <WithOutAuth path="/register">
+              <SignUp />
+            </WithOutAuth>
+
+            <WithAuth path="/cart">
               <Cart />
-            </Route>
+            </WithAuth>
 
             <WithAuth path="/inventory">
               <Inventory />
