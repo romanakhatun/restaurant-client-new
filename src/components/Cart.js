@@ -18,7 +18,6 @@ import "../styles/components/Cart.css";
 const Cart = () => {
   const auth = Auth();
   const [cart, setCart] = useState([]);
-  console.log(auth.user);
 
   useEffect(() => {
     const savedCart = getDatabaseCart();

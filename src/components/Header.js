@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo2 from "../img/logo/logo2.png";
@@ -7,15 +7,29 @@ import "../styles/components/Header.css";
 
 const Header = () => {
   const auth = Auth();
+  const [navbarActive, setNavbarActive] = useState(false);
+
+  const navbarActiveBgDesign = () => {
+    if (window.scrollY >= 80) {
+      setNavbarActive(true);
+    } else {
+      setNavbarActive(false);
+    }
+  };
+
+  window.addEventListener("scroll", navbarActiveBgDesign);
 
   return (
-    <header className="header">
+    <header
+      id="headerCommon"
+      className={navbarActive ? "headerActive" : "header"}
+    >
       <div className="headerContainer">
         <Link to="/" className="headerLogo">
-          <img src={logo2} alt="" />
+          <img src={logo2} alt="logo" />
         </Link>
 
-        <div className="headerNav">
+        <div className="navbar">
           <Link to="/cart">
             <FiShoppingCart />
           </Link>

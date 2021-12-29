@@ -1,39 +1,41 @@
-.inventoryForm {
-  display: flex;
-  max-width: 1140px;
+.inventory {
+  background-image: url(../../img/hero.png);
+  background-size: cover;
+  background-position: center center;
+  min-height: 600px;
+  height: 100vh;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.fullForm {
+  width: 70%;
+  padding: 40px 0px;
+  background-color: #fff;
+  border-radius: 0px 10px 10px 0px;
   margin: 0 auto;
 }
-.formImg {
-  width: 45%;
+
+.fullForm input {
+  color: #000;
 }
-.formImg img {
-  border-radius: 10px 0px 0px 10px;
-}
-.fullForm {
-  background: #111111;
-  width: 50%;
-  padding-top: 60px;
-  border-radius: 0px 10px 10px 0px;
-}
+
 .fullForm input,
 select {
-  width: 60%;
+  width: 80%;
   border: none;
-  color: #beb697;
   background: none;
   padding: 15px 3px;
-  font-size: 18px;
-  border-bottom: 1px solid #beb697;
+  font-size: 15px;
+  border-bottom: 1px solid #dddd;
+  margin-bottom: 10px;
 }
+
 .inventoryBtn {
-  padding: 10px 20px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 5px;
-  background-color: #e79e50;
+  width: 80%;
+  margin-top: 20px;
 }
-.inventoryBtn:hover {
-  background-color: #e2a05a;
+
+.successMsg {
+  color: red;
 }

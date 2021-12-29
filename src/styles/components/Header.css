@@ -1,8 +1,22 @@
 /* Header */
+#headerCommon {
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  transition: all 0.5s ease;
+}
+
 .header {
   background-color: #fff;
   padding: 15px 0;
 }
+
+.headerActive {
+  background-color: #ffffffe6;
+  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 20%);
+  padding: 9px 0;
+}
+
 .headerContainer {
   display: flex;
   align-items: center;
@@ -16,19 +30,19 @@
   width: 150px;
 }
 
-.headerNav {
+.navbar {
   display: flex;
   align-items: center;
 }
 
-.headerNav a {
+.navbar a {
   font-size: 16px;
   color: #343434;
   text-decoration: none;
   padding-left: 25px;
 }
 
-.headerNav .btnSignUp {
+.navbar .btnSignUp {
   border-radius: 100px;
   padding: 6px 21px;
   color: #fff;

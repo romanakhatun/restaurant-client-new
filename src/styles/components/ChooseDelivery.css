@@ -1,57 +1,67 @@
-.deliveryContainer {
-  padding: 50px;
+.delivery {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 100px auto;
 }
 
-.deliveryContainer h1 {
+.delivery h1 {
   padding-bottom: 20px;
 }
 
 .deliveryRow {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
 }
 
 .deliveryCart {
-  width: 30%;
+  width: 100%;
   margin-top: 30px;
+  padding-bottom: 15px;
   border-radius: 30px;
   transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.deliveryCart .deliveryPicture {
+  grid-column: 1/ 13;
+  padding-bottom: 20px;
 }
 
-.deliveryIcon img {
+.deliveryCart .deliveryIcon {
+  grid-column: 1 / 3;
   width: 40px;
+  justify-self: center;
 }
 
-.deliveryContent,
-.deliveryIcon {
-  padding: 10px;
+.deliveryCart h3,
+.deliveryCart p,
+.deliveryCart a {
+  grid-column: 3 / 13;
+  padding-right: 10px;
 }
-.deliveryContent p {
-  padding: 10px 0;
+
+.deliveryCart h3 {
+  font-size: 23px;
+  font-weight: 500;
 }
-.deliveryContent a {
+
+.deliveryCart a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-top: 15px;
-}
-.deliveryContent svg {
-  margin-left: 10px;
-  color: #ffff;
-  padding: 8px 9px;
-  border-radius: 50%;
-  background-color: rgb(93, 194, 75);
+  margin-top: 5px;
 }
 
-.rightIcon {
+.deliveryCart svg {
   color: #ffff;
+  padding: 5px 5px;
+  border-radius: 50%;
+  background-color: var(--colorPrimary);
+  margin-left: 5px;
 }
 
 .deliveryCart:hover {
   box-shadow: 0 5px 15px 3px #eee;
-}
-
-.deliveryCol {
-  display: flex;
-  justify-content: space-between;
 }

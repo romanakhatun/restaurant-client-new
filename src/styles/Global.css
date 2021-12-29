@@ -2,6 +2,12 @@
 
 :root {
   --colorPrimary: #f91944;
+  --xs: "480px";
+  --sm: "576px";
+  --md: "768px";
+  --lg: "960px";
+  --xl: "1279px";
+  --xxl: "1400px";
 }
 
 * {
@@ -24,8 +30,12 @@ img {
   color: #fff;
 }
 
-/* Loading */
+/* Header */
+.globalHeader {
+  padding-bottom: 60px;
+}
 
+/* Loading */
 .loading {
   text-align: center;
   margin: 60px 0px;
@@ -91,7 +101,8 @@ form input {
   font-size: 14px;
 }
 
-input:focus {
+input:focus,
+select:focus {
   outline: 0;
 }
 

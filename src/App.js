@@ -19,15 +19,18 @@ import ChooseDelivery from "./components/ChooseDelivery";
 import Footer from "./components/Footer";
 import Inventory from "./components/Inventory";
 import Profile from "./components/Profile";
-import "./styles/App.css";
 import SignUp from "./components/SignUp";
+import "./styles/Global.css";
+import { Container } from "@material-ui/core";
 
 const App = () => {
   return (
     <div className="App">
       <AuthContextProvider value="Romana">
         <Router>
-          <Header />
+          <div className="globalHeader">
+            <Header />
+          </div>
 
           <Switch>
             <Route exact path="/">
@@ -78,11 +81,13 @@ const App = () => {
             </Route>
           </Switch>
 
-          <Switch>
-            <Route exact path="/" component={Lunch} />
-            <Route exact path="/breakfast" component={Breakfast} />
-            <Route exact path="/dinner" component={Dinner} />
-          </Switch>
+          <Container>
+            <Switch>
+              <Route exact path="/" component={Lunch} />
+              <Route exact path="/breakfast" component={Breakfast} />
+              <Route exact path="/dinner" component={Dinner} />
+            </Switch>
+          </Container>
 
           <Switch>
             <Route exact path="/">

@@ -1,5 +1,5 @@
+import { Container } from "@material-ui/core";
 import React from "react";
-import imgForm from "../img/form-img.jpg";
 import "../styles/components/Inventory.css";
 
 const Inventory = () => {
@@ -43,66 +43,56 @@ const Inventory = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "50px 0" }}>
-      <div className="inventoryForm">
-        <div className="formImg">
-          <img src={imgForm} alt="" />
-        </div>
+    <div className="inventory">
+      <Container>
         <div className="fullForm ">
           <select name="cat" id="cat">
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
           </select>
-          <br />
           <input
             type="text"
             className="input"
             id="key"
             placeholder="Food key"
           />
-          <br />
           <input
             type="text"
             className="input"
             id="title"
             placeholder="Food title"
           />
-          <br />
           <input
             type="number"
             className="input"
             id="price"
             placeholder="Food price"
           />
-          <br />
-          <input
-            type="text"
-            className="input"
-            id="shortDisc"
-            placeholder="Food short description"
-          />
-          <br />
-          <input
-            type="text"
-            className="input"
-            id="longDisc"
-            placeholder="Food long description"
-          />
-          <br />
           <input
             type="text"
             className="input"
             id="img"
             placeholder="Food img url"
           />
-          <br />
-          <br />
-          <button className="inventoryBtn" id="addFood" onClick={btnAddFood}>
+          <input
+            type="text"
+            className="input"
+            id="shortDisc"
+            placeholder="Food short description"
+          />
+          <input
+            type="text"
+            className="input"
+            id="longDisc"
+            placeholder="Food long description"
+          />
+
+          <button className="btn btnFull inventoryBtn" onClick={btnAddFood}>
             Add Food
           </button>
         </div>
-      </div>
+      </Container>
 
       <p
         id="successMsg"

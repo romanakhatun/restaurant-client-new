@@ -1,15 +1,14 @@
 .foodCorner {
-  max-width: 1140px;
-  margin: 0 auto;
   padding-top: 60px;
-  text-align: center;
 }
+
 .foodCorner ul {
   display: flex;
   align-items: center;
   list-style-type: none;
   justify-content: center;
 }
+
 .foodCorner ul li {
   padding: 10px 15px;
 }
@@ -21,10 +20,12 @@
   position: relative;
   transition: all 0.3s ease;
 }
+
 .foodCorner ul li a.active,
 .foodCorner ul li a:hover {
   color: var(--colorPrimary);
 }
+
 .foodCorner ul li a.active::before,
 .foodCorner ul li a:hover::before {
   content: "";
@@ -39,35 +40,40 @@
 /* Food items */
 .foodItems {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
-  max-width: 1140px;
-  padding: 0 15px;
-  margin: 30px auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding: 15px 0px;
+  margin: 15px 0px;
 }
+
 .foodItem {
   text-align: center;
-  padding: 40px 10px;
+  padding: 30px 12px;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
+
 .foodItem:hover {
-  box-shadow: 0 5px 15px 3px #eee;
+  box-shadow: 0 0px 24px 12px #eee;
 }
 
 .foodItem img {
   width: 70%;
 }
+
 .foodItem .foodTitle {
   font-size: 18px;
   margin: 15px 0;
   text-decoration: none;
   color: #333;
 }
+
 .foodItem .foodShortDisc {
   color: #555;
   margin: 15px 0;
 }
+
 .foodItem .foodPrice {
   font-size: 25px;
   font-weight: 400;
