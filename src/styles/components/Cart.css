@@ -1,104 +1,123 @@
- .cartPage{
-    background-color: #fff;
-    max-width: 1140px;
-    padding: 0 15px;
-    margin: 0 auto;
-    padding: 50px 0;
-    display: flex;
-    justify-content: space-between;
+.cartPage {
+  background-color: #fff;
+  padding: 100px 0px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 50px;
 }
 
-.cartPage form{
-    border-top: 1px solid #000;
-    margin-top: 20px;
-    padding-top: 20px;
-}
-.cartPage form .input{
-    background-color: #eee;
-}
-.cartPage form{
-    width: 450px;
+/* Common css */
+.cartPage form {
+  border-top: 1px solid #000;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
-.deliveryDetails{
-    width: 60%;
-    text-align: center;
+.cartPage form .input {
+  background-color: #eee;
+}
+/* ======= */
+
+.deliveryDetails {
+  text-align: center;
+  grid-column: 1 / 8;
 }
 
-.cartDetails{
-    width: 40%;
+.cartDetails {
+  grid-column: 8 / 13;
 }
 
-.cartAddress{
-    padding: 10px 15px;
-}
-.cartAddress > *{
-    margin-bottom: 10px;
-}
-.cartAddress span{
-    font-weight: 400;
-}
-.cartAddress .road{
-    font-size: 18px;
-    font-weight: 500;
+.cartAddress {
+  padding: 10px 15px;
 }
 
-.cartItems{
-    margin: 10px 0;
-}
-.cartItem{
-    background-color: #f5f5f5;
-    padding: 20px 10px;
-    margin: 10px 0;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-.removeIcon{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: transparent;
-    border: none;
-    padding: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.cartAddress > * {
+  margin-bottom: 10px;
 }
 
-.cartItem .img{
-    width: 80px;
-    margin-right: 15px;
+.cartAddress span {
+  font-weight: 400;
 }
 
-.cartItem .details{
-    margin-right: auto;
-}
-.cartItem .details h5{
-    font-size: 14px;
-    font-weight: 600;
-}
-.cartItem .details .price{
-    color: #f91944;
-    font-weight: 700;
-    font-size: 15px;
-    margin: 5px 0;
-}
-.cartItem .details small{
-    color: #777;
+.cartAddress .road {
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.shoppingCost{
-    margin-top: 20px;
-    padding: 10px 20px;
+.cartItems {
+  margin: 10px 0;
 }
-.shoppingCost > div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+
+.cartItem {
+  background-color: #f5f5f5;
+  padding: 20px 10px;
+  margin: 10px 0;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-.shoppingCost .totalCost{
-    font-size: 20px;
-    font-weight: 600;
+
+.removeIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cartItem .img {
+  width: 80px;
+  margin-right: 15px;
+}
+
+.cartItem .details {
+  margin-right: auto;
+}
+
+.cartItem .details h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cartItem .details .price {
+  color: #f91944;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.cartItem .details small {
+  color: #777;
+}
+
+.shoppingCost {
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.shoppingCost > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.shoppingCost .totalCost {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 960px) {
+  .deliveryDetails {
+    grid-column: 1 / 13;
+  }
+
+  .cartDetails {
+    grid-column: 1 / 13;
+  }
 }

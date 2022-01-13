@@ -56,9 +56,9 @@ const App = () => {
               <SignUp />
             </WithOutAuth>
 
-            <WithAuth path="/cart">
+            <Route path="/cart">
               <Cart />
-            </WithAuth>
+            </Route>
 
             <WithAuth path="/inventory">
               <Inventory />
