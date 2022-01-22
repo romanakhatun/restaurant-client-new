@@ -9,8 +9,4 @@
      Cart page to manage cart, set payment info and payment
      Integrated Stripe payment system
 
-### Unfavorable:
-
-    No Responsive
-
-### [Preview Project](https://red-onion-r.web.app)
+### [Preview Project](https://red-onion-romana.web.app)
