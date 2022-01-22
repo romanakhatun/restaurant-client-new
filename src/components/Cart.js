@@ -117,7 +117,7 @@ const Cart = () => {
               className="shipForm"
               style={{ display: shipInfo ? "none" : "block" }}
             >
-              <h2>Shipment Information</h2>
+              <h2>Edit Delivery Details</h2>
               {auth.user ? (
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <input

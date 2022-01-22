@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import logo2 from "../img/logo/logo2.png";
 import Auth from "../utils/useAuth";
@@ -29,7 +31,15 @@ const Header = () => {
           <img src={logo2} alt="logo" />
         </Link>
 
-        <div className="navbar">
+        <input type="checkbox" className="navbarCheckbox" id="navToggle" />
+        <label htmlFor="navToggle" className="navbarButton">
+          <div className="navbarIcons">
+            <GiHamburgerMenu />
+            {/* <GrFormClose /> */}
+          </div>
+        </label>
+
+        <div className="navbarMenu">
           <Link to="/cart">
             <FiShoppingCart />
           </Link>
